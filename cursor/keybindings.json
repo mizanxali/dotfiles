@@ -1,0 +1,23 @@
+// Place your key bindings in this file to override the defaults
+[
+    {
+        "key": "ctrl+[Backquote]",
+        "command": "workbench.action.togglePanel",
+        "when": "!isAuxiliaryWindowFocusedContext"
+    },
+    {
+        "key": "cmd+j",
+        "command": "-workbench.action.togglePanel",
+        "when": "!isAuxiliaryWindowFocusedContext"
+    },
+    {
+        "key": "ctrl+[Backquote]",
+        "command": "glass.toggleTerminal",
+        "when": "isGlassAgentWorkspace"
+    },
+    {
+        "key": "cmd+j",
+        "command": "-glass.toggleTerminal",
+        "when": "isGlassAgentWorkspace"
+    }
+]

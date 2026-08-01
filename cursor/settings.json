@@ -1,0 +1,8 @@
+{
+    "window.autoDetectColorScheme": true,
+    "explorer.confirmPasteNative": false,
+    "editor.formatOnSave": true,
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    }
+}

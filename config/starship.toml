@@ -1,0 +1,30 @@
+add_newline = false
+
+format = """
+[](#3d0f1b)$directory$git_branch$git_status$nodejs$python[](#3d0f1b) $character
+"""
+
+[directory]
+style = "fg:#f5e9e2 bg:#3d0f1b"
+format = "[$path]($style)"
+truncation_length = 3
+
+[git_branch]
+style = "fg:#f0d6df bg:#3d0f1b"
+format = " [ $branch]($style)"
+
+[git_status]
+style = "fg:#ddb6c6 bg:#3d0f1b"
+format = " [$all_status]($style)"
+
+[nodejs]
+style = "fg:#d08c9a bg:#3d0f1b"
+format = " [ $version]($style)"
+
+[python]
+style = "fg:#d08c9a bg:#3d0f1b"
+format = " [ $version]($style)"
+
+[character]
+success_symbol = "[❯](#b56576)"
+error_symbol = "[❯](#c1121f)"

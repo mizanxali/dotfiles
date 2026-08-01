@@ -1,0 +1,9 @@
+# This is Git's per-user configuration file.
+[user]
+	name = Mizan Ali
+	email = mizanalip786@gmail.com
+# Please adapt and uncomment the following lines:
+#	name = Mizan Ali
+#	email = mizanxali@Mizans-MacBook-Air.local
+[push]
+	autoSetupRemote = true

@@ -1,0 +1,10 @@
+.DS_Store
+
+# Never commit secrets. Keys, tokens and auth blobs stay on the machine.
+*.pem
+*.key
+id_*
+!id_*.pub
+**/auth.json
+.env
+.env.*
