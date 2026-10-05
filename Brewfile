@@ -14,6 +14,7 @@ brew "watchman"     # react native file watching
 cask "cursor"
 cask "kitty"
 cask "obsidian"
+cask "orbstack"
 cask "raycast"
 cask "termius"
 cask "windscribe"

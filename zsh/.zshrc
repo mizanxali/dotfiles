@@ -11,6 +11,10 @@ alias cursor="cursor --classic"
 
 export PATH="$HOME/.local/bin:$PATH"
 
+# Homebrew Ruby (bundle/gem aren't symlinked into /opt/homebrew/bin, so
+# without this `bundle` resolves to the system Ruby 2.6 copy)
+export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
@@ -23,3 +27,5 @@ fapi() {
   source .venv/bin/activate
   fastapi dev
 }
+
+alias gclean='git branch | grep -vE "^\*|^\s*main$" | xargs -r git branch -d'
