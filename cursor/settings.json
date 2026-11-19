@@ -1,8 +1,10 @@
 {
     "window.autoDetectColorScheme": true,
     "explorer.confirmPasteNative": false,
-    "editor.formatOnSave": true,
     "[typescriptreact]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    }
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "git.confirmSync": false,
+    "claudeCode.preferredLocation": "panel",
+    "claudeCode.hideOnboarding": true
 }

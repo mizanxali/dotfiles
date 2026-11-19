@@ -29,3 +29,6 @@ fapi() {
 }
 
 alias gclean='git branch | grep -vE "^\*|^\s*main$" | xargs -r git branch -d'
+
+# Foundry
+export PATH="$HOME/.foundry/bin:$PATH"

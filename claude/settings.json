@@ -4,19 +4,45 @@
   },
   "model": "opus",
   "enableArtifact": false,
+  "statusLine": {
+    "type": "command",
+    "command": "input=$(cat); model=$(echo \"$input\" | jq -r '.model.display_name // \"Claude\"'); pct=$(echo \"$input\" | jq -r '.context_window.used_percentage // 0 | floor'); width=10; filled=$((pct * width / 100)); [ $filled -gt $width ] && filled=$width; empty=$((width - filled)); bar=''; i=0; while [ $i -lt $filled ]; do bar=\"${bar}█\"; i=$((i+1)); done; i=0; while [ $i -lt $empty ]; do bar=\"${bar}░\"; i=$((i+1)); done; printf '%s | %s %s%%' \"$model\" \"$bar\" \"$pct\""
+  },
   "enabledPlugins": {
     "clangd-lsp@claude-plugins-official": true,
     "rust-analyzer-lsp@claude-plugins-official": true,
     "sentry@claude-plugins-official": true,
     "posthog@claude-plugins-official": true,
-    "mattpocock-skills@claude-plugins-official": true,
-    "ponytail@ponytail": true
+    "mattpocock-skills@claude-plugins-official": false,
+    "warp@claude-code-warp": true,
+    "screenwriting@screenwriting-skills": true,
+    "typesafe@typesafe-ai": true,
+    "cloudflare@cloudflare": true,
+    "canva@anthropic-plugin-directory": true
   },
   "extraKnownMarketplaces": {
-    "ponytail": {
+    "claude-code-warp": {
       "source": {
         "source": "github",
-        "repo": "DietrichGebert/ponytail"
+        "repo": "warpdotdev/claude-code-warp"
+      }
+    },
+    "screenwriting-skills": {
+      "source": {
+        "source": "github",
+        "repo": "jtydhr88/screenwriting-skills"
+      }
+    },
+    "typesafe-ai": {
+      "source": {
+        "source": "github",
+        "repo": "typesafe-ai/skills"
+      }
+    },
+    "cloudflare": {
+      "source": {
+        "source": "github",
+        "repo": "cloudflare/skills"
       }
     }
   },
@@ -30,11 +56,19 @@
     },
     "claude-opus-5-5": {
       "effortLevel": "high"
+    },
+    "claude-sonnet-5-5": {
+      "effortLevel": "medium"
+    },
+    "claude-fable-5-2": {
+      "effortLevel": "medium"
     }
   },
   "tui": "fullscreen",
   "skipDangerousModePermissionPrompt": true,
+  "skipWorkflowUsageWarning": true,
   "claudeMd": "NEVER create a git commit or push to remote unless the user explicitly asks in their current message. Do not auto-commit or auto-push after implementing changes, fixing bugs, or completing tasks. Always wait for the user to review code and request it.",
   "theme": "dark",
+  "switchModelsOnFlag": true,
   "agentPushNotifEnabled": true
 }

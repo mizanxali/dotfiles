@@ -1,0 +1,33 @@
+{
+  "name": "brainrot-video",
+  "version": "1.0.0",
+  "private": true,
+  "license": "UNLICENSED",
+  "engines": {
+    "node": "^20.19.0 || ^22.13.0 || >=24"
+  },
+  "dependencies": {
+    "@remotion/captions": "4.0.545",
+    "@remotion/cli": "4.0.545",
+    "@remotion/google-fonts": "4.0.545",
+    "@remotion/media": "4.0.545",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "remotion": "4.0.545"
+  },
+  "devDependencies": {
+    "@types/react": "19.3.0",
+    "@types/web": "0.0.166",
+    "typescript": "5.9.3"
+  },
+  "scripts": {
+    "dev": "remotion studio",
+    "voice": "node generate-voiceover.mjs",
+    "sfx": "node normalize-audio.mjs sfx",
+    "check": "tsc",
+    "render": "remotion render Brainrot out/video.mp4 --codec=h264"
+  },
+  "allowScripts": {
+    "esbuild": false
+  }
+}

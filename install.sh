@@ -64,7 +64,12 @@ link ssh/config            "$HOME/.ssh/config"
 link config/starship.toml  "$HOME/.config/starship.toml"
 link config/kitty/kitty.conf "$HOME/.config/kitty/kitty.conf"
 link claude/settings.json  "$HOME/.claude/settings.json"
-link codex/config.toml     "$HOME/.codex/config.toml"
+# Personal skills are linked one by one: ~/.claude/skills also holds third-party
+# skills installed by plugins and `npx skills`, which don't belong in this repo.
+for skill in "$DOTFILES"/claude/skills/*/; do
+  skill="$(basename "$skill")"
+  link "claude/skills/$skill" "$HOME/.claude/skills/$skill"
+done
 link cursor/settings.json    "$HOME/Library/Application Support/Cursor/User/settings.json"
 link cursor/keybindings.json "$HOME/Library/Application Support/Cursor/User/keybindings.json"
 

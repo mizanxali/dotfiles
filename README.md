@@ -28,7 +28,7 @@ Use `./install.sh --link` to only refresh the symlinks and skip all package inst
 | `config/starship.toml` | `~/.config/starship.toml` |
 | `config/kitty/kitty.conf` | `~/.config/kitty/kitty.conf` |
 | `claude/settings.json` | `~/.claude/settings.json` |
-| `codex/config.toml` | `~/.codex/config.toml` |
+| `claude/skills/<name>/` | `~/.claude/skills/<name>/` (one link per skill) |
 | `cursor/settings.json` | `~/Library/Application Support/Cursor/User/settings.json` |
 | `cursor/keybindings.json` | `~/Library/Application Support/Cursor/User/keybindings.json` |
 
@@ -39,12 +39,24 @@ Package manifests: `Brewfile`, `npm/global-packages.txt`, `cursor/extensions.txt
 - **SSH private keys** — generate a fresh `id_ed25519` per machine and add the public
   half to GitHub. Only `~/.ssh/config` is tracked.
 - **CLI credentials** — `~/.codex/auth.json`, `~/.claude.json`. Sign in on the new machine.
-- **Machine-local state** — shell history, caches, `~/.nvm`, `~/.bun`, per-project trust
-  entries in the Codex config.
+- **Codex config** — `~/.codex/config.toml` is mostly per-project trust entries, so it
+  stays local.
+- **Machine-local state** — shell history, caches, `~/.nvm`, `~/.bun`.
 - **`~/.config/raycast`** — 254 MB of compiled extension bundles keyed by UUID. Raycast
   syncs settings and extensions through its own cloud sync; enable that instead.
 - **Mac App Store / Apple apps** — Xcode, Slack-adjacent Apple bundles, GarageBand,
   iMovie. Install those manually or via `mas`.
+
+## Claude skills
+
+`claude/skills/` holds only the skills I wrote. Each one is symlinked into
+`~/.claude/skills/` on its own, so third-party skills can live alongside them in that
+directory without ending up in the repo. Those come back from their sources instead:
+plugins (Cloudflare, etc.) through `/plugin`, and `npx skills` installs through
+`~/.agents/.skill-lock.json`.
+
+To add a new personal skill, create it in `claude/skills/<name>/` and run
+`./install.sh --link`.
 
 ## Making changes
 

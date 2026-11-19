@@ -1,0 +1,3 @@
+#!/bin/sh
+# Print the package/activity the TV is showing right now. Keys go to whatever this names.
+"$(dirname "$0")/tv" 'dumpsys activity activities | grep -E "^ *mResumedActivity"' | grep -oE '[A-Za-z0-9_.]+/[^ ]+'

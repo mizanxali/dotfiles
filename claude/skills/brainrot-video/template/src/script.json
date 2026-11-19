@@ -1,0 +1,18 @@
+[
+  {"id": "hook1", "text": "Your iPhone and your friend's Android are right next to each other."},
+  {"id": "hook2", "text": "Sending one file between them takes over three minutes.", "tag": "3 MINUTES. ONE FILE. 💀", "sfx": [{"sound": "vine-boom", "at": "minutes"}]},
+  {"id": "prob1", "text": "No shared Wi-Fi. No internet.", "sfx": [{"sound": "record-scratch", "volume": 0.8}]},
+  {"id": "prob2", "text": "The only thing both phones can talk over is Bluetooth, and Bluetooth crawls at about five kilobytes a second.", "tag": "BLUETOOTH ≈ 5 KB/s 🐌", "sfx": [{"sound": "whoosh"}, {"sound": "bruh", "at": "crawls", "offsetMs": 250}]},
+  {"id": "reveal", "text": "So we built Fast Link into the Offline Protocol SDK.", "tag": "⚡ FAST LINK ⚡", "sfx": [{"sound": "anime-wow", "at": "Fast", "maxMs": 2200}]},
+  {"id": "step1", "text": "Step one: the phones find each other over Bluetooth and set up an end-to-end encrypted session.", "tag": "STEP 1 · MEET OVER BLUETOOTH 🔐", "sfx": [{"sound": "whip"}]},
+  {"id": "step2", "text": "Step two: the app asks for a fast link, and the Android phone spins up its own private Wi-Fi network, with a brand new random password made just for this link.", "tag": "STEP 2 · ANDROID HOSTS WI-FI 📡", "sfx": [{"sound": "whip"}]},
+  {"id": "step3", "text": "Step three: that password goes to the iPhone inside the encrypted session. Nobody else ever sees it.", "tag": "STEP 3 · PASSWORD SENT ENCRYPTED 🤫", "sfx": [{"sound": "whip"}, {"sound": "snapchat-notification", "at": "Nobody"}]},
+  {"id": "step4", "text": "Step four: the iPhone joins, the phones open a direct Wi-Fi stream, and each one proves who it is before a single byte moves.", "tag": "STEP 4 · IPHONE JOINS ✅", "sfx": [{"sound": "whip"}]},
+  {"id": "fallback", "text": "Bluetooth stays on the whole time, so no message drops during the switch."},
+  {"id": "test", "text": "We tested it on a Samsung and an iPhone 16.", "tag": "REAL PHONES. REAL RUN. 📱", "sfx": [{"sound": "whoosh"}]},
+  {"id": "numBle", "text": "A one megabyte file over Bluetooth took one hundred ninety-seven seconds.", "sfx": [{"sound": "loading-lag", "volume": 0.6}], "card": {"type": "compare", "title": "1 MB FILE · ANDROID → IPHONE", "until": "numX", "rows": [{"label": "🐌 BLUETOOTH", "value": 197.7, "suffix": "s", "decimals": 1, "color": "#FF4D4D", "line": "numBle", "fill": "line"}, {"label": "⚡ FAST LINK", "value": 2.5, "suffix": "s", "decimals": 1, "color": "#3DFF8B", "line": "numFast", "fill": "snap"}], "stamp": {"text": "~80x FASTER 🤯", "line": "numX", "at": "eighty"}}},
+  {"id": "numFast", "text": "Over Fast Link it took two and a half.", "sfx": [{"sound": "whoosh"}, {"sound": "ding", "at": "half"}]},
+  {"id": "numX", "text": "That's almost eighty times faster.", "sfx": [{"sound": "vine-boom", "at": "eighty"}]},
+  {"id": "setup", "text": "Getting the link up takes about ten seconds and one tap on the iPhone. When you leave the app or stop sending, it shuts itself down.", "sfx": [{"sound": "switch", "at": "tap"}]},
+  {"id": "outro", "text": "No router. No internet. No cloud. Just two phones. Offline Protocol.", "tag": "NO ROUTER · NO INTERNET · NO CLOUD", "sfx": [{"sound": "whoosh"}, {"sound": "vine-boom", "at": "Protocol"}]}
+]

@@ -1,0 +1,6 @@
+#!/bin/sh
+# Talk to the MiTV-AXSO0 from any folder, using the cleanyourtv repo's ADB client and its venv.
+# Usage: tv --probe | tv '<shell command>' | tv --screenshot out.png [KEY ...] [--wait S] | tv --reboot
+REPO=/Users/mizanxali/cleanyourtv
+export TV_HOST="${TV_HOST:-192.168.29.50}"
+exec "$REPO/tools/venv/bin/python" "$REPO/tools/tv.py" "$@"
